@@ -1,8 +1,8 @@
 //
-//  TabContentView.swift
-//  XCANews
+//  NewsFeedsApp.swift
+//  NewsFeeds
 //
-//  Created by Alfian Losari on 7/10/21.
+//  Created by Apple on 26/11/22.
 //
 
 import SwiftUI

@@ -1,8 +1,8 @@
 //
-//  ArticleNewsViewModel.swift
-//  XCANews
+//  NewsFeedsApp.swift
+//  NewsFeeds
 //
-//  Created by Alfian Losari on 6/27/21.
+//  Created by Apple on 26/11/22.
 //
 
 import SwiftUI
@@ -118,4 +118,9 @@ class ArticleNewsViewModel: ObservableObject {
         if Task.isCancelled { return [] }
         return articles
     }
+}
+
+extension Notification.Name {
+    
+    static let articleSent = Notification.Name("ArticleSent")
 }

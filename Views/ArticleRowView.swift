@@ -1,8 +1,8 @@
 //
-//  ArticleRowView.swift
-//  XCANews
+//  NewsFeedsApp.swift
+//  NewsFeeds
 //
-//  Created by Alfian Losari on 6/27/21.
+//  Created by Apple on 26/11/22.
 //
 
 import SwiftUI

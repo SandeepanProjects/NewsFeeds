@@ -1,8 +1,8 @@
 //
-//  CategoryArticles.swift
-//  CategoryArticles
+//  NewsFeedsApp.swift
+//  NewsFeeds
 //
-//  Created by Alfian Losari on 8/29/21.
+//  Created by Apple on 26/11/22.
 //
 
 import Foundation
