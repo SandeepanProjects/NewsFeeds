@@ -37,7 +37,7 @@ struct SidebarContentView: View {
                     } header: {
                         Text("Categories")
                     }
-                    .navigationTitle("XCA News")
+                    .navigationTitle("News")
                 }
                 .listStyle(.sidebar)
             }

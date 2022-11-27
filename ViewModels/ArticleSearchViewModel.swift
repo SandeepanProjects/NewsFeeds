@@ -29,9 +29,6 @@ class ArticleSearchViewModel: ObservableObject {
     
     private init() {
         load()
-        #if os(tvOS)
-        observeSearchQuery()
-        #endif
     }
     
     private func observeSearchQuery() {

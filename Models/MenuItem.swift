@@ -11,9 +11,6 @@ enum MenuItem: CaseIterable {
     case search
     case saved
     case category(Category)
-    #if os(watchOS)
-    case settings
-    #endif
     
     var text: String {
         switch self {
@@ -23,11 +20,6 @@ enum MenuItem: CaseIterable {
             return "Saved"
         case .category(let category):
             return category.text
-        #if os(watchOS)
-        case .settings:
-            return "Settings"
-        #endif
-        
         }
     }
     
@@ -39,10 +31,6 @@ enum MenuItem: CaseIterable {
             return "bookmark"
         case .category(let category):
             return category.systemImage
-        #if os(watchOS)
-        case .settings:
-            return "gear"
-        #endif
         }
     }
     
@@ -62,10 +50,6 @@ extension MenuItem: Identifiable {
             return "saved"
         case .category(let category):
             return category.rawValue
-        #if os(watchOS)
-        case .settings:
-            return "settings"
-        #endif
         }
     }
     
@@ -75,10 +59,6 @@ extension MenuItem: Identifiable {
             self = .search
         case MenuItem.saved.id:
             self = .saved
-        #if os(watchOS)
-        case MenuItem.settings.id:
-            self = .settings
-        #endif
         default:
             if let id = id, let category = Category(rawValue: id) {
                 self = .category(category)

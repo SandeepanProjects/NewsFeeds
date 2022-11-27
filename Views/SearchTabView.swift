@@ -9,20 +9,12 @@ import SwiftUI
 
 struct SearchTabView: View {
     
-    #if os(iOS)
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    #endif
-    
-    #if os(iOS) || os(tvOS)
     @StateObject var searchVM = ArticleSearchViewModel.shared
-    #elseif os(macOS) || os(watchOS)
-    @EnvironmentObject var searchVM: ArticleSearchViewModel
-    #endif
     
     var body: some View {
         ArticleListView(articles: articles)
             .overlay(overlayView)
-            #if os(iOS)
             .navigationTitle("Search")
             .searchable(text: $searchVM.searchQuery, placement: horizontalSizeClass  == .regular ? .navigationBarDrawer : .automatic) { suggestionsView }
             .onChange(of: searchVM.searchQuery) { newValue in
@@ -31,16 +23,6 @@ struct SearchTabView: View {
                 }
             }
             .onSubmit(of: .search, search)
-            #elseif os(tvOS)
-            .searchable(text: $searchVM.searchQuery)
-            .onChange(of: searchVM.searchQuery) { newValue in
-                if newValue.isEmpty {
-                    searchVM.phase = .empty
-                }
-            }
-            #elseif os(macOS) || os(watchOS)
-            .navigationTitle(searchVM.currentSearch == nil ? "Search" : "Search results for \(searchVM.currentSearch!)")
-            #endif
     }
     
     private var articles: [Article] {
@@ -55,7 +37,6 @@ struct SearchTabView: View {
     private var overlayView: some View {
         switch searchVM.phase {
         case .empty:
-            #if os(iOS)
             if !searchVM.searchQuery.isEmpty {
                 ProgressView()
             } else if !searchVM.history.isEmpty {
@@ -66,15 +47,6 @@ struct SearchTabView: View {
             } else {
                 EmptyPlaceholderView(text: "Type your query to search from NewsAPI", image: Image(systemName: "magnifyingglass"))
             }
-            #elseif os(tvOS)
-            if !searchVM.searchQuery.isEmpty {
-                ProgressView()
-            } else {
-                EmptyPlaceholderView(text: "Type your query to search from NewsAPI", image: Image(systemName: "magnifyingglass"))
-            }
-            #elseif os(macOS) || os(watchOS)
-                ProgressView()
-            #endif
             
         case .success(let articles) where articles.isEmpty:
             EmptyPlaceholderView(text: "No search results found", image: Image(systemName: "magnifyingglass"))
