@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187FB402293470E4007856D7 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 187FB401293470E4007856D7 /* news.json */; };
 		188772BC293269B600A886AB /* NewsFeedsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188772BB293269B600A886AB /* NewsFeedsApp.swift */; };
 		188772BE293269B600A886AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188772BD293269B600A886AB /* ContentView.swift */; };
 		188772C0293269B900A886AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188772BF293269B900A886AB /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		187FB401293470E4007856D7 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
 		188772B8293269B600A886AB /* NewsFeeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeeds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188772BB293269B600A886AB /* NewsFeedsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedsApp.swift; sourceTree = "<group>"; };
 		188772BD293269B600A886AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				188772BB293269B600A886AB /* NewsFeedsApp.swift */,
+				187FB401293470E4007856D7 /* news.json */,
 				188772BD293269B600A886AB /* ContentView.swift */,
 				188772BF293269B900A886AB /* Assets.xcassets */,
 				188772C1293269B900A886AB /* Preview Content */,
@@ -363,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187FB402293470E4007856D7 /* news.json in Resources */,
 				188772C3293269B900A886AB /* Preview Assets.xcassets in Resources */,
 				188772C0293269B900A886AB /* Assets.xcassets in Resources */,
 			);

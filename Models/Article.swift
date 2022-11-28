@@ -9,9 +9,6 @@ import Foundation
 
 fileprivate let relativeDateFormatter = RelativeDateTimeFormatter()
 
-let activityTypeViewKey = "com.alfianlosari.xcanews.view"
-let activityURLKey = "xcanews.url.key"
-
 struct Article {
     // This id will be unique and auto generated from client side to avoid clashing of Identifiable in a List as NewsAPI response doesn't provide unique identifier
     let id = UUID()

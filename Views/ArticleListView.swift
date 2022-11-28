@@ -28,13 +28,6 @@ struct ArticleListView: View {
                 selectedArticleURL = url
             }
         }
-        .onContinueUserActivity(activityTypeViewKey) { userActivity in
-            if let urlString = userActivity.userInfo?[activityURLKey] as? String,
-               let url = URL(string: urlString),
-               url != selectedArticleURL {
-                selectedArticleURL = url
-            }
-        }
     }
     
     @ViewBuilder
